@@ -5,49 +5,47 @@
 
 #define N 0x26
 
-int main(){
 
+int main(){
     char nombre[N];
     int lista[N];
 
     char no_[N] = { 'p', 'e', 'p', 'e', '\0' };
-    char nom[N] ="pepe";
+    char nom[N] = "pepe";
 
-    nom[3] = 'a';
+    nom[3] = 'a'; // Despues de inicializar hay que ir celda a celda (verso a verso)
+    printf("Nombre ocupa: %lu bytes.\n", sizeof(nombre));
+    printf("Nombre ocupa: %Xh bytes.\n", (int) sizeof(nombre));
+    printf("Lista ocupa: %lu bytes.\n", sizeof(lista));
+    printf("Lista ocupa: %lu celdas.\n",
+            sizeof(lista) / sizeof(int) );
 
-   printf("Nombre Ocupa: %lu bytes.\n", sizeof(nombre));
-   printf("Nombre Ocupa: %i bytes.\n", (int) sizeof(nombre));
-   printf("Nombre Ocupa: %Xh bytes.\n", (int) sizeof(nombre)); 
+    /* We can find rubbish */
+    printf("%c", nombre[0]);
+    printf("%c", nombre[1]);
+    printf("%c", nombre[2]);
+    printf("%c", nombre[3]);
+    printf("%c", nombre[4]);
+    printf("%c", nombre[5]);
+    printf("\n");
 
-   printf("Lista Ocupa: %lu bytes.\n", sizeof(lista));
-   printf("Lista Ocupa: %lu celdas.\n", sizeof(lista) / sizeof(int) );
+    printf("%s\n", nombre);
 
-   printf("%c", nombre[0]);
-   printf("%c", nombre[1]);
-   printf("%c", nombre[2]);
-   printf("%c", nombre[3]);
-   printf("%c", nombre[4]);
-   printf("%c", nombre[5]);
-   printf("\n");
+    bzero(lista, sizeof(lista));
 
-   printf("%s\n", nombre);
+    memset(lista + 1, 3, 3);
+    printf("%X.", lista[0]);
+    printf("%X.", lista[1]);
+    printf("%X.", lista[2]);
+    printf("%X.", lista[3]);
+    printf("%X.", lista[4]);
+    printf("%X.", lista[5]);
+    printf("\n");
 
-   bzero(lista, sizeof(lista));
-
-  memset(lista + 1, 3, 3);
-  
-   printf("%X.",lista[0]);
-   printf("%X.", lista[1]);
-   printf("%X.", lista[2]);
-   printf("%X.", lista[3]);
-   printf("%X.", lista[4]);
-   printf("%X.", lista[5]);
-   printf("\n");
-
-   printf("Dime tu nombre: ");
-   fgets(nombre, N, stdin);
-   sprintf(nom, "Hola, %s", nombre);
-   printf("%s\n" , nom);
+    printf("Dime tu nombre: ");
+    fgets(nombre, N, stdin);
+    sprintf(nom, "Hola, %s", nombre);
+    printf("%s\n", nom);
 
     return EXIT_SUCCESS;
 }
