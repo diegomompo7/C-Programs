@@ -7,6 +7,8 @@ int main(){
     char apellido1 [256];
     char apellido2 [256];
 
+nombre: color: FF0000;
+
     printf ("Dime tu nombre: ");
     scanf (" %s", nombre);
     printf ("Dime tu primer apellido: ");
