@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define N 3
+#define N 2
 
 void ver(double a[N][N]){
     printf("\n");
@@ -15,9 +15,8 @@ void ver(double a[N][N]){
 
 int main(){
     double a[N][N] = {
-        {5, 3, 6},
-        {3, 1, 8},
-        {1, 5, 9}
+        {5, -7},
+        {-8, 4},
     },
            coef[N], k, det=1;
     int cima = 0;
