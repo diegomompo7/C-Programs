@@ -1,10 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-double main(){
-    double lado,
-        area,
-        perimetro;
+int main(){
+   
+    int lado, area, perimetro;
 
     system("toilet --gay -fpagga CUADRADO");
 
