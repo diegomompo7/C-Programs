@@ -8,10 +8,10 @@ int main(){
 
     char buffer[N];
 
-    printf("nombre: ");
+    printf("Nombre: ");
     fgets(buffer, N, stdin);
-   
-    readline("nombre: ");
+
+    readline("Nombre: ");
 
     return EXIT_SUCCESS;
 }

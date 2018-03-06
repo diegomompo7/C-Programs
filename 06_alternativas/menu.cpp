@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define TRI 1 
+#define TRI 1
 #define CUA 2
 #define PAR 3
-#define PEN 4 
+#define PEN 4
 #define CIR 5
 
 int main(){
@@ -14,7 +14,7 @@ int main(){
     system("toilet --gay -fpagga AREAS");
 
     printf(
-            "Elige una figura:\n"
+            "Elige la figura:\n"
             "\n"
             "\t1. Triángulo.\n"
             "\t2. Cuadrado.\n"
@@ -27,37 +27,27 @@ int main(){
 
     scanf(" %u", &opcion);
 
-    switch(opcion){
-        case 1:
-            printf("▲");
+    switch(opcion) {
+        case TRI:
+            printf("△");
             break;
-    }
-    switch(opcion){
-         case 2:
-            printf("■");
+        case CUA:
+            printf("□");
             break;
-    }
-    switch(opcion){
-         case 3:
-            printf("▰");
+        case PAR:
+            printf("▱");
             break;
-    }
-    switch(opcion){
-         case 4:
-            printf("⬟");
+        case PEN:
+            printf("⬠");
             break;
-    }
-    switch(opcion){
-         case 5:
-            printf("●");
+        case CIR:
+            printf("○");
             break;
-   }
-    switch(opcion){
         default:
-            printf("Del 1 al 5, cara anchoa.\n");
+            printf("Del 1 al 5, borrico.\n");
             break;
     }
 
-
+    printf("\n");
     return EXIT_SUCCESS;
 }

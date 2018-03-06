@@ -2,13 +2,23 @@
 #include <stdlib.h>
 
 int es_par(int prueba) {
-    return
+    return !(prueba % 2);
+}
+
+int es_pa(int prueba) {
+    return prueba % 2 ? 0 : 1;
 }
 
 
-    if (es par(2))
+bool es_p(int prueba){
+    if (prueba % 2)
+        return false;
+    return true;
+}
+int main(){
+
+    if (es_par(2))
         printf("Es par. \n");
-    else
-        printf("No es par .\n");
+
     return EXIT_SUCCESS;
 }

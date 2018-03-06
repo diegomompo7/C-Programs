@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-double main(){
-    double lado,
+int main(){
+    int lado,
         area,
         perimetro;
 
