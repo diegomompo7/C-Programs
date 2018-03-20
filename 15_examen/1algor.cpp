@@ -28,7 +28,7 @@ int main(){
     printf("Palabra: ");
     fgets(buffer,N, stdin);
 
-    lista = (char **) realloc(lista, contador_palabras * sizeof(char *));
+    lista = (char **) realloc(lista , (contador_palabras+1) * sizeof(char *));
 
     longitud = strlen(buffer);
 
