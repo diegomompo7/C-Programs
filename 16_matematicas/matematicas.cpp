@@ -2,8 +2,10 @@
 #include <stdlib.h>
 #include <math.h>
 
+/* ADVERTENCIA: LOS NÚMEROS SE APROXIMAN A LAS UNIDADES */
 int main(){
 
+/* INTRODUCIMOS LAS VARIABLES */
     int base1;
     int exp1;
     int base2;
@@ -22,6 +24,7 @@ int main(){
     int resultado12;
     int resultado13;
 
+/* INTRODUCIMOS LOS DATOS */
     printf("Ingrese la base número 1:\n");
     scanf("%i", &base1);
     printf("Ingrese la base exponente número 1:\n");
@@ -31,6 +34,7 @@ int main(){
     printf("Ingrese el exponente número 2:\n");
     scanf("%i", &exp2);
 
+/* PONEMOS EL RESULTADO QUE TIENE QUE DAR */
     resultado1 = pow(base1, exp1);
     resultado2 = pow(base2, exp2);
     resultado3 = (resultado1 + resultado2);
@@ -44,6 +48,8 @@ int main(){
     resultado11 = (resultado1 + resultado2 + resultado3 + resultado4 + resultado5 + resultado6 + resultado7 + resultado8 + resultado9 + resultado10);
     resultado12 = 2;
     resultado13 = (resultado11 / resultado12);
+
+/* SACAMOS POR PANTALLA CUANDO DA EL RESULTADO */
 
     printf("%i elevado a %i es igual a %i\n", base1, exp1, resultado1);
     printf("%i elevado a %i es igual a %i\n", base2, exp2, resultado2);
