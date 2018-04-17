@@ -34,7 +34,8 @@ void tablero (char c [3][3]){ /* Parte 1 */
 /* -------------------------------------------------------------------------- */
 
 void Intro_Jugador1 (char c[3][3]){ /* Parte 2 */
-	int i,j,k; /* i: vertical. j: horizontal */
+        char pj1 = 'X';
+        int i,j,k; /* i: vertical. j: horizontal */
 	char aux;
 
 	do{
@@ -134,6 +135,7 @@ void Intro_Jugador1 (char c[3][3]){ /* Parte 2 */
 	c[i][j] = 'X';
 }
 void Intro_Jugador2 (char c[3][3]){ /* Parte 2 */
+        char pj2 = 'O';
         int i,j,k; /* i: vertical. j: horizontal */
         char aux;
 

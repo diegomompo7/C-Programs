@@ -24,7 +24,7 @@ int main(){
 }
 
 void loop (char c [3][3]){
-    int i,j;
+    int i,j,pj1,pj2;
 
     i = 0;
 
@@ -33,6 +33,7 @@ void loop (char c [3][3]){
     do{
 	system("clear");
 	tablero (c);
+
 
         if(i % 2 == 0){
 	   Intro_Jugador1(c);	
@@ -46,8 +47,14 @@ void loop (char c [3][3]){
 
     }while (i < 9 && j == 2);
 
-    if (j == 0){
-        printf("ENHORABUENA, ¡¡¡ HAS GANADO !!!");
+    system("clear");
+    tablero (c);
+
+    if (j == 0 ){
+        printf("ENHORABUENA JUGADOR, ¡¡¡ HAS GANADO !!!\n\n");
+    }
+    else if (j == 0 ){
+       printf("ENHORABUENA JUGADOR, ¡¡¡ HAS GANADO !!!\n\n"); 
     }
     else{
         printf("Habeís empatado");
@@ -59,6 +66,7 @@ void loop (char c [3][3]){
 	int i,j;
 	char aux;
 	
+    ://github.com/diegomompo7/C-Programs.git
 	aux = '1';
 
 	for(i=0; i<3; i++){
