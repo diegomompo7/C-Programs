@@ -1,61 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "cuerpotresenraya.h"
-
-/* Parte 1: Crear tablero */
-/* Parte 2: Introducir una ficha */
-
-void loop (char c [3][3]);
-void Intro_primero (char c [3][3]); /* Parte 1 */
-void tablero (char c [3][3]); /* Parte 1 */
-void Intro_Jugador1 (char c[3][3]); /* Parte 2 */
-void Intro_Jugador2 (char c[3][3]); /* Parte 2 */
-int ganador(char c[3][3]); /* Parte 3 */ 
-
-int main(){
-
-        char c [3][3]; 
-
-	system("clear");
-
-	loop (c);
-
-    return EXIT_SUCCESS;
-}
-
-void loop (char c [3][3]){
-    int i,j;
-
-    i = 0;
-
-    Intro_primero (c);
-
-    do{
-	system("clear");
-	tablero (c);
-
-        if(i % 2 == 0){
-	   Intro_Jugador1(c);	
-	}
-	else{
-	   Intro_Jugador2(c);
-	}
-        j = ganador(c);
-
-	i++;
-
-    }while (i < 9 && j == 2);
-
-    if (j == 0){
-        printf("ENHORABUENA, ¡¡¡ HAS GANADO !!!");
-    }
-    else{
-        printf("Habeís empatado");
-    }
-	
-}
-/* -------------------------------------------------------------------------- */
-/* void Intro_primero (char c [3][3]){
+void Intro_primero (char c [3][3]){  /* Parte 1 */
 	int i,j;
 	char aux;
 	
@@ -69,7 +12,7 @@ void loop (char c [3][3]){
 	}
 
 }
-void tablero (char c [3][3]){  
+void tablero (char c [3][3]){ /* Parte 1 */
 	int i,j;
 	for(i=0; i<3; i++){
 	   for(j=0; j<3; j++){
@@ -88,10 +31,10 @@ void tablero (char c [3][3]){
 	printf("\n\n");
 }
 
-* -------------------------------------------------------------------------- 
+/* -------------------------------------------------------------------------- */
 
-void Intro_Jugador1 (char c[3][3]){  
-	int i,j,k;  i: vertical. j: horizontal 
+void Intro_Jugador1 (char c[3][3]){ /* Parte 2 */
+	int i,j,k; /* i: vertical. j: horizontal */
 	char aux;
 
 	do{
@@ -190,8 +133,8 @@ void Intro_Jugador1 (char c[3][3]){
 	
 	c[i][j] = 'X';
 }
-void Intro_Jugador2 (char c[3][3]){ * Parte 2 *
-        int i,j,k; * i: vertical. j: horizontal *
+void Intro_Jugador2 (char c[3][3]){ /* Parte 2 */
+        int i,j,k; /* i: vertical. j: horizontal */
         char aux;
 
         do{
@@ -250,7 +193,7 @@ void Intro_Jugador2 (char c[3][3]){ * Parte 2 *
                    break;
                 }
                 case '6': {
-                   i = 1; 52 /* -------------
+                   i = 1;
                    j= 2;
                    if (c[i][j] == 'X' || c [i][j] == 'O'){
                         k = 1;
@@ -290,4 +233,66 @@ void Intro_Jugador2 (char c[3][3]){ * Parte 2 *
 
         c[i][j] = 'O';
 }
-* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+int ganador(char c[3][3]){ /* Parte 3 */
+  if(c[0][0] == 'X' || c[0][0] == 'O'){
+      if(c[0][0] == c[0][1] && c[0][0] == c[0][2]){
+        if(c[0][0] == 'X' || c[0][0] == 'O'){
+            return 0; /* He ganado */
+        }
+      }
+      if(c[0][0] == c[1][0] && c[0][0] == c[2][0]){
+        if(c[0][0] == 'X' || c[0][0] == 'O'){
+            return 0; /* He ganado */
+        }
+      }
+  } 
+
+   if(c[1][1] == 'X' || c[1][1] == 'O'){
+      if(c[1][1] == c[0][0] && c[1][1] == c[2][2]){
+        if(c[1][1] == 'X' || c[1][1] == 'O'){
+            return 0; /* He ganado */
+        }
+      }
+      if(c[1][1] == c[1][0] && c[1][1] == c[1][2]){
+        if(c[1][1] == 'X' || c[1][1] == 'O'){
+            return 0; /* He ganado */
+        }
+      }
+      if(c[1][1] == c[0][2] && c[1][1] == c[2][0]){
+        if(c[1][1] == 'X' || c[1][1] == 'O'){
+            return 0; /* He ganado */
+        }
+      }
+      if(c[1][1] == c[0][1] && c[1][1] == c[2][1]){
+         if(c[1][1] == 'X' || c[1][1] == 'O'){
+            return 0; /* He ganado */
+          }
+      }
+   }
+   
+   if(c[2][2] == 'X' || c[2][2] == 'O'){
+      if(c[2][2] == c[2][0] && c[2][2] == c[2][1]){
+         if(c[2][2] == 'X' || c[2][2] == 'O'){
+            return 0; /* He ganado */
+         }
+      }
+      if(c[2][2] == c[0][2] && c[2][2] == c[1][2]){
+         if(c[2][2] == 'X' || c[2][2] == 'O'){
+            return 0; /* He ganado */
+         }
+      }
+   }
+  return 2; 
+}
+ 
+                  
+                                   
+                          
+            
+   
+
+
+
+
